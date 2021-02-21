@@ -6,16 +6,16 @@ You can also use this file to share your decision making process, why you chose 
 - Gradle https://gradle.org/install/
 
 ### Run: ###
-```
+```javascript
 gradle test
 ```
 
 ### Test reports: ###
-```
+```javascript
 build\reports\tests\test\index.html
 ```
 
 ### Test logs: ###
-```
+```javascript
 logs/tests.log
 ```
