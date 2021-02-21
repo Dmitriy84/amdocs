@@ -12,7 +12,7 @@ gradle test
 
 ### Test reports: ###
 ```javascript
-build\reports\tests\test\index.html
+build/reports/tests/test/index.html
 ```
 
 ### Test logs: ###

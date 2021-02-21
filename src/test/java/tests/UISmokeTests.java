@@ -6,14 +6,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
 import pages.checkboxes.CheckBoxesPage;
+import pages.dynamicLoading.DynamicallyLoadingExample2Page;
+import pages.dynamicLoading.DynamicallyLoadingPage;
 import pages.frames.FramesPage;
 import pages.frames.iFramePage;
 
 @Slf4j
 public final class UISmokeTests extends BaseTest {
+    private HomePage homePage;
+
     @Test
     public void checkboxesPageControlsCouldChangeState() {
-        var homePage = new HomePage(driver);
         homePage.checkBoxes.click();
 
         var checkboxesPage = new CheckBoxesPage(driver);
@@ -36,7 +39,6 @@ public final class UISmokeTests extends BaseTest {
     public void framesPageAllowsToEditTextParagraph() {
         var testText = "Dmytro";
 
-        var homePage = new HomePage(driver);
         homePage.frames.click();
 
         var framesPage = new FramesPage(driver);
@@ -52,12 +54,20 @@ public final class UISmokeTests extends BaseTest {
 
     @Test
     public void dynamicLoadingAbleToShowMessage() {
+        homePage.dynamicallyLoading.click();
 
+        var dynamicallyLoadingPage = new DynamicallyLoadingPage(driver);
+        dynamicallyLoadingPage.example2.click();
+
+        var dynamicallyLoadingExample2Page = new DynamicallyLoadingExample2Page(driver);
+        dynamicallyLoadingExample2Page.start.click();
+        dynamicallyLoadingExample2Page.waitUntilFinishedAndTextAppear("Hello World!");
     }
 
     @BeforeEach
     public void preconditions() {
         log.info("Open URL: " + System.getProperty("base.url"));
         driver.get(System.getProperty("base.url"));
+        homePage = new HomePage(driver);
     }
 }
