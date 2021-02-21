@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.Augmenter;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class BaseTest {
+public class BaseUITest {
     protected WebDriver driver;
     private static DriverManagerType driverManagerType;
 

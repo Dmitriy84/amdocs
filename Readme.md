@@ -19,3 +19,13 @@ build/reports/tests/test/index.html
 ```javascript
 logs/tests.log
 ```
+
+### Multi browsers: ###
+Change property
+```javascript
+systemProperty "webdriver.browser", "firefox"
+```
+OR
+```javascript
+systemProperty "webdriver.browser", "chrome"
+```

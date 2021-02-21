@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -12,7 +12,7 @@ import pages.frames.FramesPage;
 import pages.frames.iFramePage;
 
 @Slf4j
-public final class UISmokeTests extends BaseTest {
+public final class UISmokeTests extends BaseUITest {
     private HomePage homePage;
 
     @Test
@@ -66,8 +66,9 @@ public final class UISmokeTests extends BaseTest {
 
     @BeforeEach
     public void preconditions() {
-        log.info("Open URL: " + System.getProperty("base.url"));
-        driver.get(System.getProperty("base.url"));
+        var base = System.getProperty("base.url");
+        log.info("Open URL: " + base);
+        driver.get(base);
         homePage = new HomePage(driver);
     }
 }

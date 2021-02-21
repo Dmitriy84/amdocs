@@ -22,6 +22,8 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit"
     testImplementation "io.github.bonigarcia:webdrivermanager:$webdrivermanager"
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: selenium
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
@@ -39,5 +41,6 @@ test {
 
     systemProperty "base.url", "https://the-internet.herokuapp.com/"
     systemProperty "webdriver.chrome.driver", "src/test/resources/webdriver/chromedriver.exe"
-    systemProperty "webdriver.browser", "chrome"
+    systemProperty "webdriver.browser", "firefox"
+    systemProperty "base.api.url", "https://www.metaweather.com/"
 }
