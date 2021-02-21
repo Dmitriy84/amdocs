@@ -4,6 +4,8 @@ You can also use this file to share your decision making process, why you chose 
 ### Prerequisites: ###
 - Java 11
 - Gradle https://gradle.org/install/
+- Chrome browser https://www.google.com/chrome
+- Firefox browser https://www.mozilla.org/en-US/firefox/new/
 
 ### Run: ###
 ```javascript
